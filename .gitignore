@@ -7,9 +7,7 @@
 /test/**/dev-defaults.webpack.lock
 /benchmark/js
 /benchmark/fixtures
-/examples/**/dist
-/assembly/**/*.wat
-/assembly/**/*.wasm
+/dist
 /coverage
 /.nyc_output
 /.jest-cache
