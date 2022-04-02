@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  background-color: #000000;
+}
+.container {
+  color: #00FF00;
+}
+h1 {
+  margin-top: 300px;
+  font-size: 200px;
+  text-align: center;
+}
