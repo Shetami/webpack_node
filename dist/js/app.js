@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Header {\r\n    render(){\r\n    const header = document.createElement('h1');\r\n    header.innerHTML = 'Hello world';\r\n\r\n    const body = document.body;\r\n    body.appendChild(header)\r\n    }\r\n}\r\n\r\nconst header = new Header\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (header);\n\n//# sourceURL=webpack:///./components/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _header_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header.less */ \"./components/header.less\");\n\r\n\r\nclass Header {\r\n    render(){\r\n    const header = document.createElement('h1');\r\n    header.innerHTML = 'Hello world';\r\n\r\n    const body = document.body;\r\n    body.appendChild(header)\r\n    }\r\n}\r\n\r\nconst header = new Header\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (header);\n\n//# sourceURL=webpack:///./components/header.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header */ \"./components/header.js\");\n/* harmony import */ var _components_header_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/header.less */ \"./components/header.less\");\n\r\n\r\n\r\n_components_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"].render();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header */ \"./components/header.js\");\n\r\n\r\n_components_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"].render();\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 

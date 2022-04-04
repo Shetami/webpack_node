@@ -1,3 +1,5 @@
+import './header.less'
+
 class Header {
     render(){
     const header = document.createElement('h1');
