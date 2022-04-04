@@ -7,7 +7,6 @@
 /test/**/dev-defaults.webpack.lock
 /benchmark/js
 /benchmark/fixtures
-/dist
 /coverage
 /.nyc_output
 /.jest-cache

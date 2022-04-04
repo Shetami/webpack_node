@@ -1,6 +1,3 @@
-import Post from "./Post"
-import './styles/style.css'
+import header from './components/header'
 
-const post = new Post('Webpack Post title')
-
-console.log('Post to String:', post.toString())
+header.render();
