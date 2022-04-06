@@ -1,15 +1,13 @@
-import './header.less'
+import './header.less';
+import {View} from 'backbone.marionette';
+import _ from 'underscore';
 
-class Header {
-    render(){
-    const header = document.createElement('h1');
-    header.innerHTML = 'Hello world';
-
-    const body = document.body;
-    body.appendChild(header)
+export const Header = View.extend({
+    tagName: 'h1',
+    template: _.template('<%= text %>'),
+    templateContext() {
+      return {
+        text: this.getOption('text')
+      }
     }
-}
-
-const header = new Header
-
-export default header
+  });

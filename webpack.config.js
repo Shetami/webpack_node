@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports ={
     context: path.resolve(__dirname, 'src'),
@@ -9,7 +10,7 @@ module.exports ={
         main: './index.js',     
     },
     output: {
-        filename: 'js/app.js',
+        filename: 'js/[name].[hash].js',
         path: path.resolve(__dirname, 'dist')
     },
     devServer:{
@@ -19,15 +20,29 @@ module.exports ={
         },
     
     },
+    optimization:{
+        splitChunks:{
+            chunks: 'all',
+            cacheGroups:{
+                vendor:{
+                  name: 'vendors',
+                  test: /node_modules/,  
+                  enforce: true
+                }
+            }
+        }
+    },
     resolve: {
         extensions:['.js', '.less'],
         alias:{
-            '@': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src'),
         }
     },
     plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({
         filename: 'style/app.css',
-    })], 
+    }),
+    new CleanWebpackPlugin()
+    ], 
     module:{
         rules:[{
             test: /\.less$/,
