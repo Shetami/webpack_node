@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { isDataView } = require('util/types')
 
 module.exports ={
     context: path.resolve(__dirname, 'src'),
@@ -19,6 +18,12 @@ module.exports ={
             directory: path.join(__dirname, 'src'),
         },
     
+    },
+    resolve: {
+        extensions:['.js', '.less'],
+        alias:{
+            '@': path.resolve(__dirname, 'src')
+        }
     },
     plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({
         filename: 'style/app.css',
