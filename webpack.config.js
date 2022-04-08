@@ -7,7 +7,7 @@ module.exports ={
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './index.js',     
+        app: './index.js',         
     },
     output: {
         filename: 'js/[name].[hash].js',

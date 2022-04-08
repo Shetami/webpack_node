@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Header } from '@/components/header';
+import { Header } from '@/components';
 
 let view = new Header({ text: 'hello world' });
 
