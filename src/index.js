@@ -1,8 +1,7 @@
-import $ from 'jquery';
-import { Header } from '@/components';
+var app = app || {};
 
-let view = new Header({ text: 'hello world' });
-
-$(document.body).append(view.el);
-
-view.render();
+$(function(){
+    app.postView = new PointView({
+        el: '#container'
+    })
+});

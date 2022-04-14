@@ -1,9 +1,8 @@
-import './header.less';
 import {View} from 'backbone.marionette';
 import _ from 'underscore';
 
-export const Header = View.extend({
-    tagName: 'h1',
+export let Template = View.extend({
+    tagName: 'div',
     template: _.template('<%= text %>'),
     templateContext() {
       return {
