@@ -58,4 +58,4 @@ let MainView = Backbone.View.extend({
     }
 });
 
-export default PointView
+export default MainView
