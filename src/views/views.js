@@ -17,6 +17,7 @@ let PointView = Backbone.View.extend({
     render: function(){
         var view = this.template(this.model.toJSON());
         this.$el.html(view);
+        return this.$el;
     },    
     
     deletePoint: function(){
@@ -44,11 +45,17 @@ let MainView = Backbone.View.extend({
         this.template = _.template($('#viewMain').html());
         this.$el.html(this.template());
         this.collect = PostCollection();
-        this.listenTo(this.collect, "all", this.render);
         this.listenTo(this.collect, "add", this.addOne);
     },
 
-    render: function(){
-        
+    addPoint: function(){
+        this.collect.add({});
+    },
+
+    addOne: function(model){
+        var view = new PointView({model: model});
+        this.$('.PointList').append(view.render);
     }
 });
+
+export default PointView

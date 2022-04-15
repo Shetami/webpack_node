@@ -3,4 +3,8 @@ let PointModel = Backbone.Model.extend({
         descripion: '',
         completed: false,
     },
+
+    initialize: function() {},
 });
+
+export default PointModel;

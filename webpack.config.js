@@ -2,12 +2,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports ={
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        app: './index.js',         
+        app: './index.js',      
     },
     output: {
         filename: 'js/[name].[hash].js',
@@ -38,10 +39,18 @@ module.exports ={
             '@': path.resolve(__dirname, 'src'),
         }
     },
-    plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({
+    plugins:[new HtmlWebpackPlugin({
+        template: './index.html'
+    }), new MiniCssExtractPlugin({
         filename: 'style/app.css',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        'JQuery': 'jquery',
+        'Backbone': 'backbone',
+        _: 'underscore'
+    })
     ], 
     module:{
         rules:[{
