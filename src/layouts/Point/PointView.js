@@ -1,3 +1,5 @@
+import PointModel from './PointModel'
+
 let PointView = Backbone.View.extend({
     tagName: 'li',
 
@@ -34,3 +36,7 @@ let PointView = Backbone.View.extend({
         return false;
     }    
 })
+
+let PointCollection = Backbone.Collection.extend({
+    model: PointModel,
+});
