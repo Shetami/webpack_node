@@ -4,8 +4,7 @@ import './models/models.js'
 
 var app = app || {};
 
-var Backbone = require('backbone');
-Backbone.$(function(){
+$(function(){
     app.postView = new MainView({
         el: '#main'
     })
