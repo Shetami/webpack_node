@@ -39,9 +39,7 @@ module.exports ={
             '@': path.resolve(__dirname, 'src'),
         }
     },
-    plugins:[new HtmlWebpackPlugin({
-        template: './index.html'
-    }), new MiniCssExtractPlugin({
+    plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({
         filename: 'style/app.css',
     }),
     new CleanWebpackPlugin(),

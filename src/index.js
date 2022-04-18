@@ -1,12 +1,8 @@
-import MainView from './views/views.js'
-import './collections/collections.js'
-import './models/models.js'
+import $ from 'jquery';
+import { MainView } from './models';
 
-var app = app || {};
+let main = new MainView();
 
-$(function(){
-    app.postView = new MainView({
-        el: '#main'
-    })
-});
+$(document.body).append(view.el);
 
+view.render();
