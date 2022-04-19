@@ -1,37 +1,24 @@
 import PointModel from './PointModel'
-import { View } from 'backbone.marionette'
-import templatePointView from '../templates'
+import {View, CollectionView} from 'backbone.marionette'
+import Backbone from 'backbone';
 
-let PointView = View.extend({
+let PointView = CollectionView.extend({
 
-    // events: {
-    //     click: 'click',
-    // },
+    tagName: 'ul',
 
-    template: _.template(templatePointView),
-    
-    // render: function(){
-    //     var view = this.template(this.model.toJSON());
-    //     this.$el.html(view);
-    //     return this.$el;
-    // },    
-    
-    // deletePoint: function(){
-    //     this.model.destroy();
-    // },
+    events: {
+        click: 'click',
+    },
 
-    // editPoint: function(){
-    //     var result = this.model.set({
-    //         description: this.$('.description').text(),
-    //         completed: this.$('.completed').attr('value'),   
-    //     });
-    // },
-    // completedPoint: function(){
-    //     return false;
-    // }    
+      
+    childView: View.extend({
+        template: _.template('<p><%= description %></p>'),
+    })
 })
 
 
 let Points = Backbone.Collection.extend({
     model: PointModel,
 });
+
+export {PointView, Points};

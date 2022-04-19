@@ -1,26 +1,33 @@
-import { Collection } from 'backbone';
-import { View, CollectionView } from 'backbone.marionette';
+import {PointView, Points} from '../Point/PointView';
+import HeaderView from '../Header/HeaderView';
+import { View } from 'backbone.marionette';
 import _ from 'underscore';
-import content from '../templates'
+
 
 let MainView = View.extend({
 
-    events:{
-        "click .add-task": "createNewPoint",
+    regions: {
+        headerRegion: '#header',
+        contentRegion: '#content',
     },
 
-    template: _.template(content),
-
-    templateID:{
-        description: '#description'
+    onRender(){
+        this.showChildView('headerRegion', new HeaderView())
+        this.showChildView('contentRegion', new PointView())
     },
 
-    createNewPoint: function(){
-        this.collection.add({
-            description: this.templateID.description.val(),
-        });
-        this.templateID.description.val("");
+    initialize(){
+        const collection = new Points()
     },
 
+    template: _.template('<div id="header"></div><div id="content"></div>'),
+
+    initialize() {
+        this.triggerMethod('after:initialize');
+    }
+
+    
 
 });
+
+export default MainView;

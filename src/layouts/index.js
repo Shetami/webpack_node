@@ -1,6 +1,15 @@
-import { Application } from 'backbone.marionette';
+import Backbone from 'backbone'
+import {Application, View} from 'backbone.marionette'
+import MainView from './Main/MainView'
 
-let MainApp = new Application();
+export default Application.extend({
+    region: '#app',
 
-export default MainApp;
+    onStart(app, options){
+        this.showView(new MainView({model: this.model}))
+        Backbone.history.start()
+    }
+})
+
+
 

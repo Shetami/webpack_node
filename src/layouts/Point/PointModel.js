@@ -1,6 +1,1 @@
-let PointModel = Backbone.Model.extend({
-    defaults:{
-        descripion: '',
-        completed: false,
-    },
-});
+let PointModel = Backbone.Model.extend({});
