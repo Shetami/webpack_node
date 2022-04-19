@@ -1,1 +1,2 @@
-const content = '<h2>My Rockets</h2><button class="btn btn-success addObject">add one</button><table class="table table-striped"><thead><th data-sort="description">Description</th></thead><tbody class="rocketsList"></tbody></table>'
+let templateMain = '<h2>Task</h2><p>Description: <input type="text" id="description"></p><p><button class="add-task">Add</button></p>'
+let templatePointView = '<p><%= description %></p>'  

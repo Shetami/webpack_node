@@ -1,42 +1,37 @@
 import PointModel from './PointModel'
+import { View } from 'backbone.marionette'
+import templatePointView from '../templates'
 
-let PointView = Backbone.View.extend({
-    tagName: 'li',
+let PointView = View.extend({
 
-    events: {
-        "blur .description .completed": "editPoint",
-        "keypress .deletePoint": "deletePoint",
-        "click .completed": "completedPoint",
-    },
+    // events: {
+    //     click: 'click',
+    // },
 
-    initialize: function() {
-        this.template = _.template($('#viewPoint').html());
-        this.listenTo(this.model, "change", this.render);
-        this.listenTo(this.model, "destroy", this.remove);
-
-    },
+    template: _.template(templatePointView),
     
-    render: function(){
-        var view = this.template(this.model.toJSON());
-        this.$el.html(view);
-        return this.$el;
-    },    
+    // render: function(){
+    //     var view = this.template(this.model.toJSON());
+    //     this.$el.html(view);
+    //     return this.$el;
+    // },    
     
-    deletePoint: function(){
-        this.model.destroy();
-    },
+    // deletePoint: function(){
+    //     this.model.destroy();
+    // },
 
-    editPoint: function(){
-        var result = this.model.set({
-            description: this.$('.description').text(),
-            completed: this.$('.completed').attr('value'),   
-        });
-    },
-    completedPoint: function(){
-        return false;
-    }    
+    // editPoint: function(){
+    //     var result = this.model.set({
+    //         description: this.$('.description').text(),
+    //         completed: this.$('.completed').attr('value'),   
+    //     });
+    // },
+    // completedPoint: function(){
+    //     return false;
+    // }    
 })
 
-let PointCollection = Backbone.Collection.extend({
+
+let Points = Backbone.Collection.extend({
     model: PointModel,
 });

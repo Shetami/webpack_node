@@ -1,25 +1,26 @@
-import { View } from 'backbone.marionette';
+import { Collection } from 'backbone';
+import { View, CollectionView } from 'backbone.marionette';
 import _ from 'underscore';
 import content from '../templates'
 
 let MainView = View.extend({
 
     events:{
-        "click .addPoint": "addPoint",
+        "click .add-task": "createNewPoint",
     },
 
-    initialize: function(){
-        this.content = content;
-        this.template = _.template('<% content %>');
-        this.collect = PointCollection();
-        this.listenTo(this.collect, "add", this.addOne);
+    template: _.template(content),
+
+    templateID:{
+        description: '#description'
     },
 
-    addPoint: function(){
-        this.collect.add({});
+    createNewPoint: function(){
+        this.collection.add({
+            description: this.templateID.description.val(),
+        });
+        this.templateID.description.val("");
     },
 
-    addOne: function(model){
-        
-    }
+
 });

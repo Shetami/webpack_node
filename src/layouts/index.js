@@ -1,7 +1,6 @@
-import $ from 'jquery';
-import { MainView } from './models';
+import { Application } from 'backbone.marionette';
 
-let Main = new MainView();
+let MainApp = new Application();
 
-export default Main;
+export default MainApp;
 
