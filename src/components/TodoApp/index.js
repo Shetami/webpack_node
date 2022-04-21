@@ -1,7 +1,7 @@
-import {PointView, Points} from './Point/PointView';
+import {PointView} from './Point/PointView';
+import { Points } from './Point/collectionPoint';
 import { HeaderView } from './Header/HeaderView';
-import { View } from 'backbone.marionette';
-import _ from 'underscore';
+import { View } from 'Vendor';
 
 
 let TodoView = View.extend({

@@ -21,22 +21,23 @@ module.exports ={
         },
     
     },
-    optimization:{
-        splitChunks:{
-            chunks: 'all',
-            cacheGroups:{
-                vendor:{
-                  name: 'vendors',
-                  test: /node_modules/,  
-                  enforce: true
-                }
-            }
-        }
-    },
+    // optimization:{
+    //     splitChunks:{
+    //         chunks: 'all',
+    //         cacheGroups:{
+    //             vendor:{
+    //               name: 'vendors',
+    //               test: /node_modules/,  
+    //               enforce: true
+    //             }
+    //         }
+    //     }
+    // },
     resolve: {
         extensions:['.js', '.less'],
         alias:{
             '@': path.resolve(__dirname, 'src'),
+            Vendor: path.resolve(__dirname, 'src/vendor/index.js'),
         }
     },
     plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({

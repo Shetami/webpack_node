@@ -1,0 +1,1 @@
+export {View, CollectionView} from './backbone.m.vendor';

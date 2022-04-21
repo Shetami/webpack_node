@@ -1,6 +1,4 @@
-import PointModel from './PointModel'
-import {View, CollectionView} from 'backbone.marionette'
-import Backbone from 'backbone';
+import {View, CollectionView} from 'Vendor'
 
 let PointView = CollectionView.extend({
 
@@ -17,8 +15,4 @@ let PointView = CollectionView.extend({
 })
 
 
-let Points = Backbone.Collection.extend({
-    model: PointModel,
-});
-
-export {PointView, Points};
+export {PointView};
