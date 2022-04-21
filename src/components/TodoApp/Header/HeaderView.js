@@ -1,5 +1,4 @@
 import {View} from 'backbone.marionette'
-import PointModel from '../Point/PointModel'
 
 let HeaderView = View.extend({
     ui: {
