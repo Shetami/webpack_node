@@ -1,1 +1,0 @@
-import content from './template'

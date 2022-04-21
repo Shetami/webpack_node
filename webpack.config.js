@@ -8,7 +8,7 @@ module.exports ={
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        app: './layouts/index.js',      
+        app: './index.js',      
     },
     output: {
         filename: 'js/[name].[hash].js',
@@ -54,7 +54,7 @@ module.exports ={
         rules:[{
             test: /\.less$/,
             use: [               
-            MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'
+            MiniCssExtractPlugin.loader,'source-map-loader', 'css-loader', 'less-loader'
             ]
         }]
     },
