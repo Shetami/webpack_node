@@ -1,1 +1,1 @@
-import attachView from "./attach";
+export {attachView} from "./attach";
