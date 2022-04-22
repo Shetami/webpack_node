@@ -8,4 +8,4 @@ function attachView(view) {
 	view.triggerMethod('attach', view);
 }
 
-export default attachView;
+export {attachView};
