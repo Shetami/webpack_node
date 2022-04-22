@@ -8,10 +8,9 @@ let HeaderView = View.extend({
     },
 
 
-    addKeydown(event){
+    addKeydown(event) {
         if (event.key === 'Enter'){
             let Description = new PointModel();
-            console.log(typeof Description); //выдает object
             this.collection.add(Description);
         }
     },
