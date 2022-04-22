@@ -17,7 +17,7 @@ let TodoView = View.extend({
     },
 
     initialize(){
-        const collection = new Points()
+        this.collection = new Points()
     },
 
     template: _.template('<div id="header"></div><div id="content"></div>'),

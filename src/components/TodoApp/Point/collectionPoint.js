@@ -1,6 +1,7 @@
 import {PointModel} from './PointModel'
+import {Collection} from 'Vendor'
 
-let Points = Backbone.Collection.extend({
+let Points = Collection.extend({
     model: PointModel,
 });
 
