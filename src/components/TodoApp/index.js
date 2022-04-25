@@ -1,6 +1,6 @@
-import {PointView} from './Point/PointView';
-import { Points } from './Point/collectionPoint';
-import { HeaderView } from './Header/HeaderView';
+import { PointView } from './point/PointView';
+import { Points } from './point/collectionPoint';
+import { HeaderView } from './header/HeaderView';
 import { View } from 'Vendor';
 
 
@@ -13,7 +13,7 @@ let TodoView = View.extend({
 
     onRender(){
         this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}))
-        this.showChildView('contentRegion', new PointView({collection: this.collection}))
+        this.showChildView('contentRegion', new PointView({model: this.model, collection: this.collection}))
     },
 
     initialize(){
@@ -22,9 +22,6 @@ let TodoView = View.extend({
 
     template: _.template('<div id="header"></div><div id="content"></div>'),
 
-    initialize() {
-        this.triggerMethod('after:initialize');
-    }
 });
 
 export {TodoView};

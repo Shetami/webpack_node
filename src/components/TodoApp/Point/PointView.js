@@ -1,17 +1,13 @@
 import {View, CollectionView} from 'Vendor'
+import { ItemView } from '../item';
 
 let PointView = CollectionView.extend({
 
     tagName: 'ul',
 
-    events: {
-        click: 'click',
-    },
 
-      
-    childView: View.extend({
-        template: _.template('<p><%= description %></p>'),
-    })
+    childView: ItemView,
+
 })
 
 
