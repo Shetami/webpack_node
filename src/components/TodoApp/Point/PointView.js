@@ -7,7 +7,11 @@ let PointView = CollectionView.extend({
 
 
     childView: ItemView,
-
+    childViewOptions() {
+        return {
+          collection: this.collection
+        }
+      }
 })
 
 

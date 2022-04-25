@@ -12,8 +12,6 @@ let HeaderView = View.extend({
         if (event.key === 'Enter'){
             let Description = new PointModel();
             var val = this.$el.find('.val').val().trim();
-            console.log(val);
-            console.log(this.collection);
             this.collection.add({title:val});  
             this.$el.find('.val').val('')
         }
