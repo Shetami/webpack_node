@@ -1,4 +1,4 @@
-import { TodoView } from './components/TodoApp';
+import { TodoView } from './components/todoApp';
 import {attachView} from './utils';
 
 attachView(new TodoView);

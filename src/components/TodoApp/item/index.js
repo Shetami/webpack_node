@@ -1,1 +1,1 @@
-export {ItemView} from './item'
+export {ItemView} from './Item'

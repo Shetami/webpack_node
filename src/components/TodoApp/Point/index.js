@@ -1,2 +1,2 @@
-import PointModel from './PointModel'
-import PointView from './PointView'
+export {PointModel} from './PointModel'
+export {PointView} from './PointView'
