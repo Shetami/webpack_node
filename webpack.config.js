@@ -44,18 +44,12 @@ module.exports ={
         filename: 'style/app.css',
     }),
     new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-        $: 'jquery',
-        'JQuery': 'jquery',
-        'Backbone': 'backbone',
-        _: 'underscore'
-    }),
     ], 
     module:{
         rules:[{
             test: /\.less$/,
             use: [               
-            MiniCssExtractPlugin.loader,"style-loader", 'css-loader', 'less-loader'
+            "style-loader", 'css-loader', 'less-loader'
             ]
         }]
     },
