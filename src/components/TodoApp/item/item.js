@@ -1,4 +1,5 @@
 import {View} from 'Vendor'
+import {_} from 'Vendor';
 
 export const ItemView = View.extend({
 

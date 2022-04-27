@@ -2,6 +2,7 @@ import { PointView } from './point/PointView';
 import { Points } from './point/collectionPoint';
 import { HeaderView } from './header/HeaderView';
 import { View } from 'Vendor';
+import {_} from 'Vendor';
 
 let TodoView = View.extend({
 

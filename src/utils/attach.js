@@ -1,3 +1,4 @@
+import {_} from 'Vendor';
 function attachView(view) {
 	if (!view.isRendered()) {
 		view.render();
