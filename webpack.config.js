@@ -49,13 +49,13 @@ module.exports ={
         'JQuery': 'jquery',
         'Backbone': 'backbone',
         _: 'underscore'
-    })
+    }),
     ], 
     module:{
         rules:[{
             test: /\.less$/,
             use: [               
-            MiniCssExtractPlugin.loader,'source-map-loader', 'css-loader', 'less-loader'
+            MiniCssExtractPlugin.loader,"style-loader", 'css-loader', 'less-loader'
             ]
         }]
     },

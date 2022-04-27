@@ -3,7 +3,6 @@ import { Points } from './point/collectionPoint';
 import { HeaderView } from './header/HeaderView';
 import { View } from 'Vendor';
 
-
 let TodoView = View.extend({
 
     regions: {
