@@ -1,23 +1,24 @@
-import { PointView } from './point/PointView';
-import { Points } from './point/collectionPoint';
+import { ListView } from './points/ListView';
+import { Points } from './points/collectionPoint';
 import { HeaderView } from './header/HeaderView';
 import { View } from 'Vendor';
 import {_} from 'Vendor';
 
 let TodoView = View.extend({
-
+    className: 'app',
     regions: {
         headerRegion: '#header',
         contentRegion: '#content',
     },
 
     onRender(){
-        this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}))
-        this.showChildView('contentRegion', new PointView({model: this.model, collection: this.collection}))
+        this.showChildView('headerRegion', new HeaderView({collection: this.collection}));
+        this.showChildView('contentRegion', new ListView({collection: this.collection}));
     },
 
+
     initialize(){
-        this.collection = new Points()
+        this.collection = new Points();
     },
 
     template: _.template('<div id="header"></div><div id="content"></div>'),

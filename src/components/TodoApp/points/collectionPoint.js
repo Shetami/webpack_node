@@ -1,4 +1,4 @@
-import {PointModel} from './PointModel'
+import {PointModel} from './PointsModel'
 import {Collection} from 'Vendor'
 
 let Points = Collection.extend({

@@ -1,9 +1,10 @@
 import {View} from 'Vendor'
-import {PointModel} from '../point/PointModel'
+import {PointModel} from '../points/PointsModel'
 import {_} from 'Vendor';
 
 let HeaderView = View.extend({
 
+    className:'todo',
     events: {
         'keydown input': 'addKeydown',
     },
@@ -11,10 +12,10 @@ let HeaderView = View.extend({
 
     addKeydown(event) {
         if (event.key === 'Enter'){
-            let Description = new PointModel();
-            var val = this.$el.find('.val').val().trim();
+            new PointModel();
+            let val = this.$el.find('.val').val().trim();
             this.collection.add({title:val});  
-            this.$el.find('.val').val('')
+            this.$el.find('.val').val('');
         }
     },
 
