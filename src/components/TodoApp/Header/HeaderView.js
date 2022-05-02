@@ -1,5 +1,5 @@
-import {View} from 'Vendor'
-import {PointModel} from '../points/PointsModel'
+import {View} from 'Vendor';
+import {PointModel} from '../points/PointsModel';
 import {_} from 'Vendor';
 
 let HeaderView = View.extend({

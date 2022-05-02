@@ -7,15 +7,26 @@ export const ItemView = View.extend({
 
     initialize() {
         console.log(this.model.toJSON())
-      },
-
-    template: _.template('<li class="todoPoint"><%= title %></li><button>&times;</button>'),
-
-    events: {
-        'click button': 'removeItem'
     },
 
-    removeItem(){
+    template: _.template('<input type="checkbox" class="checkbox" id="check"></input><li class="todoPoint"><%= title %></li><button>&times;</button>'),
+
+    events: {
+        'click button': 'removeItem',
+        'click .checkbox': 'completePoint'
+    },
+
+    completePoint() {
+        let check = document.getElementById('check'); 
+        if (check.checked) {
+            this.model.set({completed: true})
+        }
+        else {
+            this.model.set({completed: false})    
+        }
+    },
+
+    removeItem() {
         this.collection.remove(this.model)
     }
 })

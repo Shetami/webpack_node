@@ -1,1 +1,1 @@
-export {HeaderView} from './HeaderView'
+export {HeaderView} from './HeaderView';

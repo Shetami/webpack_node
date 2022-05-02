@@ -1,2 +1,2 @@
-export {PointModel} from './PointsModel'
-export {ListView} from './ListView'
+export {PointModel} from './PointsModel';
+export {ListView} from './ListView';
