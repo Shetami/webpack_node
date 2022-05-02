@@ -7,6 +7,7 @@ let HeaderView = View.extend({
     className:'todo',
     events: {
         'keydown input': 'addKeydown',
+        'click #complete': 'complete',
     },
 
 
@@ -18,6 +19,7 @@ let HeaderView = View.extend({
             this.$el.find('.val').val('');
         }
     },
+
 
     template: _.template('<h2>TODO</h2><input class="val" type="text">'),   
 })

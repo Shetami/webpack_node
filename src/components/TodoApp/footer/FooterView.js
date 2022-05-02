@@ -4,8 +4,7 @@ import {_} from 'Vendor';
 
 let FooterView = View.extend({
 
-    
-    
+
     template: _.template('<button class="all">all</button><button class="completed">completed</button><button class="not-completed">not-completed</button>'),
 
     events: {
@@ -15,7 +14,7 @@ let FooterView = View.extend({
     },
 
     allFilter() {
-        this.collection.were({completed: true, completed: false});
+        this.collection.where({completed: false});
     }
 })
 export { FooterView };

@@ -9,21 +9,15 @@ export const ItemView = View.extend({
         console.log(this.model.toJSON())
     },
 
-    template: _.template('<input type="checkbox" class="checkbox" id="check"></input><li class="todoPoint"><%= title %></li><button>&times;</button>'),
+    template: _.template('<li class="todoPoint"><%= title %></li><button id="del">&times;</button><button id="com">complete</button>'),
 
     events: {
-        'click button': 'removeItem',
-        'click .checkbox': 'completePoint'
+        'click #del': 'removeItem',
+        'click #com': 'completePoint',
     },
 
     completePoint() {
-        let check = document.getElementById('check'); 
-        if (check.checked) {
-            this.model.set({completed: true})
-        }
-        else {
-            this.model.set({completed: false})    
-        }
+        this.model.set({compleated: true})
     },
 
     removeItem() {

@@ -16,7 +16,7 @@ let TodoView = View.extend({
     onRender(){
         this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}));
         this.showChildView('contentRegion', new ListView({collection: this.collection}));
-        this.showChildView('footerRegion', new FooterView({model: this.model}));
+        this.showChildView('footerRegion', new FooterView({collection: this.collection}));
     },
 
 
@@ -24,7 +24,7 @@ let TodoView = View.extend({
         this.collection = new Points();
     },
 
-    template: _.template('<div id="header"></div><div id="content"></div>'),
+    template: _.template('<div id="header"></div><div id="content"></div><div id="footer"></div>'),
 
 });
 
