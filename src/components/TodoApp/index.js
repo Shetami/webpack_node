@@ -16,7 +16,7 @@ let TodoView = View.extend({
     onRender(){
         this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}));
         this.showChildView('contentRegion', new ListView({collection: this.collection}));
-        this.showChildView('footerRegion', new FooterView({collection: this.collection}));
+        this.showChildView('footerRegion', new FooterView({model: this.model, collection: this.collection}));
     },
 
 

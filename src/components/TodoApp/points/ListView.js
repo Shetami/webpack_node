@@ -12,9 +12,10 @@ let ListView = CollectionView.extend({
     return {
       collection: this.collection
     }
-  }
+  },
 
-    
+  viewFilter: {compleated: false}
+
 })
 
 

@@ -17,7 +17,8 @@ export const ItemView = View.extend({
     },
 
     completePoint() {
-        this.model.set({compleated: true})
+        this.model.set({compleated: true});
+        console.log(this.model.get("compleated"));
     },
 
     removeItem() {
