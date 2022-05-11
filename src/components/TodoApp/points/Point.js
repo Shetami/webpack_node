@@ -1,5 +1,5 @@
-import {View} from 'Vendor'
-import {_} from 'Vendor';
+import {View} from 'vendors'
+import {_} from 'vendors';
 
 export const ItemView = View.extend({
 
@@ -9,16 +9,25 @@ export const ItemView = View.extend({
         console.log(this.model.toJSON())
     },
 
-    template: _.template('<li class="todoPoint"><%= title %></li><button id="del">&times;</button><button id="com">complete</button>'),
+    template: _.template(`
+    <button class="complete">&nbsp;</button>
+    <span><%= title %></span>
+    <button class="remove">&times;</button>
+    `),
 
     events: {
-        'click #del': 'removeItem',
-        'click #com': 'completePoint',
+        'click .remove': 'removeItem',
+        'click .complete': 'completePoint',
     },
 
     completePoint() {
-        this.model.set({compleated: true});
-        console.log(this.model.get("compleated"));
+        let completed = !this.model.get('completed');
+        this.model.set({ completed: !completed });
+        if (completed) {
+            this.$el.addClass('completed');
+        } else {
+            this.$el.removeClass('completed');
+        }
     },
 
     removeItem() {

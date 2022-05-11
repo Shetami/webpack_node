@@ -1,11 +1,17 @@
-import {View, CollectionView} from 'Vendor'
+import {View, CollectionView} from 'vendors'
 import { ItemView } from './Point';
-import {_} from 'Vendor';
+import {_} from 'vendors';
 
 let ListView = CollectionView.extend({
 
   tagName: 'ul',
 
+  initialize() {
+    let filter = this.getOption('PointModel');
+    this.listenTo(filter, 'change', () => {
+      this.filter();
+    })
+  },
 
   childView: ItemView,
   childViewOptions() {
@@ -14,7 +20,17 @@ let ListView = CollectionView.extend({
     }
   },
 
-  viewFilter: {compleated: false}
+  viewFilter(childView) {
+    debugger;;
+    let filter = this.getOption('PointModel');
+    let value = filter.get('completed');
+
+    if (value == null){
+      return true;
+    }
+
+    return childView.model.get('completed') === value;
+  }
 
 })
 

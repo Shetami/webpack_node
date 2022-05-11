@@ -1,3 +1,3 @@
 export {View, CollectionView} from './backbone.m.vendor';
-export {Collection, Model} from './bacbone';
+export {Collection, Model} from './backbone';
 export {_} from './underscore';

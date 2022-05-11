@@ -37,7 +37,7 @@ module.exports ={
         extensions:['.js', '.less'],
         alias:{
             '@': path.resolve(__dirname, 'src'),
-            Vendor: path.resolve(__dirname, 'src/vendor/index.js'),
+            vendors: path.resolve(__dirname, 'src/vendor/index.js'),
         }
     },
     plugins:[new HtmlWebpackPlugin(), new MiniCssExtractPlugin({
