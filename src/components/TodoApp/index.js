@@ -1,5 +1,5 @@
-import { ListView } from './points/ListView';
-import { Points } from './points/collectionPoint';
+import { ListView } from './item/ListView';
+import { Items } from './item/ItemCollection';
 import { FooterView } from './footer/FooterView';
 import { HeaderView } from './header/HeaderView';
 import { View } from 'vendors';
@@ -13,10 +13,7 @@ let TodoView = View.extend({
         footerRegion: '#footer',
     },
 
-    options:{
-        model: this.model, 
-        collection: this.collection
-    },
+    
     onRender(){
         this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}));
         this.showChildView('contentRegion', new ListView({collection: this.collection}));
@@ -25,7 +22,7 @@ let TodoView = View.extend({
 
 
     initialize(){
-        this.collection = new Points();
+        this.collection = new Items();
     },
 
     template: _.template('<div id="header"></div><div id="content"></div><div id="footer"></div>'),

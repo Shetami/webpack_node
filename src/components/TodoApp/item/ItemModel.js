@@ -1,9 +1,9 @@
 import {Model} from 'vendors'
-let PointModel = Model.extend({
+let ItemModel = Model.extend({
     defaults: {
         title: 'default',
         completed: false,
     },
 
 });
-export  {PointModel};
+export  {ItemModel};

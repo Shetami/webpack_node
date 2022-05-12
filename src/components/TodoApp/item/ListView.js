@@ -1,5 +1,5 @@
 import {View, CollectionView} from 'vendors'
-import { ItemView } from './Point';
+import { ItemView } from './ItemView';
 import {_} from 'vendors';
 
 let ListView = CollectionView.extend({
@@ -21,7 +21,6 @@ let ListView = CollectionView.extend({
   },
 
   viewFilter(childView) {
-    debugger;;
     let filter = this.getOption('PointModel');
     let value = filter.get('completed');
 

@@ -20,7 +20,7 @@ export const ItemView = View.extend({
         'click .complete': 'completePoint',
     },
 
-    completePoint() {
+    completeItem() {
         let completed = !this.model.get('completed');
         this.model.set({ completed: !completed });
         if (completed) {

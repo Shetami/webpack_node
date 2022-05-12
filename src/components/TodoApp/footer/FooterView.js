@@ -1,4 +1,3 @@
-import { normalizeMethods } from 'backbone.marionette';
 import {View} from 'vendors';
 import {_} from 'vendors';
 
@@ -13,7 +12,7 @@ let FooterView = View.extend({
     ),
 
     setFilter(key, value) {
-        let filter = this.getOption('filterModel');
+        let filter = this.getOption('ItemModel');
         filter.set(key, value);
     },
 
