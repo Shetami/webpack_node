@@ -13,7 +13,7 @@ let HeaderView = View.extend({
 
     addKeydown(event) {
         if (event.key === 'Enter'){
-            new PointModel();
+            new ItemModel();
             let val = this.$el.find('.val').val().trim();
             this.collection.add({title:val});  
             this.$el.find('.val').val('');
