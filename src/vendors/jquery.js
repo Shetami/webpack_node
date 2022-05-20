@@ -1,1 +1,1 @@
-export {default as $} from "underscore";
+export { default as $ } from 'jquery';

@@ -1,1 +1,1 @@
-export {default as _} from "underscore";
+export { default as _ } from 'underscore';

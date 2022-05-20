@@ -27,9 +27,12 @@ input {
 }
 
 
-.item{
-    display: inline-block;
+.item {
+	&.completed {
+		text-decoration: line-through;
+	}
 }
+
 .todoPoint{
     word-break: break-all;
     padding: 15px 30px 15px 15px;

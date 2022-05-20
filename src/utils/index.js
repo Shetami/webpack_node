@@ -1,1 +1,1 @@
-export {attachView} from "./attach";
+export { attachView } from './attach';

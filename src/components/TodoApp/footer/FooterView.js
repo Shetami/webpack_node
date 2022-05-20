@@ -1,32 +1,40 @@
-import {View} from 'vendors';
-import {_} from 'vendors';
+import { View, _, $ } from 'vendors';
 
 
-let FooterView = View.extend({
+
+const FooterView = View.extend({
 
 
-    template: _.template(`
-    <button data="undefined">all</button>
-    <button data="true">complete</button>
-    <button data="false">not-completed</button>`
-    ),
+	template: _.template(`
+    <button data-data="">all</button>
+    <button data-data="true">complete</button>
+    <button data-data="false">not-completed</button>`
+	),
 
-    setFilter(key, value) {
-        let filter = this.getOption('ItemModel');
-        filter.set(key, value);
-    },
 
-    events: {
-        'click button[date]'(event){
-            let value = $(event.target).closest('button').data('role');
-            value = normalizeValue(value);
-            this.setFilter('completed', value);
-        },
-        'click .all': 'getFilter',
-        'click .completed': 'completedFilter',
-        'click .not-completed': 'notCompletedFilter',
-    },
+	_setFilter (key, value) {
 
-    
-})
+		this.model.set(key, value);
+
+	},
+
+	events: {
+		'click button[data-data]' (event) {
+
+			let value = $(event.target).closest('button').data('data');
+			if (value === '') {
+
+				value = undefined;
+
+			}
+			this._setFilter('completed', value);
+
+		},
+		'click .all': 'getFilter',
+		'click .completed': 'completedFilter',
+		'click .not-completed': 'notCompletedFilter'
+	}
+
+
+});
 export { FooterView };

@@ -2,34 +2,38 @@ import { ListView } from './item/ListView';
 import { Items } from './item/ItemCollection';
 import { FooterView } from './footer/FooterView';
 import { HeaderView } from './header/HeaderView';
-import { View } from 'vendors';
-import {_} from 'vendors';
-
-let TodoView = View.extend({
-    className: 'app',
-    regions: {
-        headerRegion: '#header',
-        contentRegion: '#content',
-        footerRegion: '#footer',
-    },
-
-    
-    onRender(){
-        this.showChildView('headerRegion', new HeaderView({model: this.model, collection: this.collection}));
-        this.showChildView('contentRegion', new ListView({collection: this.collection}));
-        this.showChildView('footerRegion', new FooterView({model: this.model, collection: this.collection}));
-    },
+import { View, _ } from 'vendors';
+import { FilterModel } from './item/filterModel';
 
 
-    initialize(){
-        this.collection = new Items();
-    },
+const TodoView = View.extend({
+	className: 'app',
+	regions: {
+		headerRegion: '#header',
+		contentRegion: '#content',
+		footerRegion: '#footer'
+	},
 
-    template: _.template('<div id="header"></div><div id="content"></div><div id="footer"></div>'),
+
+
+	onRender () {
+
+		const options = {
+			collection: new Items(),
+			model: new FilterModel()
+		};
+
+		this.showChildView('headerRegion', new HeaderView(options));
+		this.showChildView('contentRegion', new ListView(options));
+		this.showChildView('footerRegion', new FooterView(options));
+
+	},
+
+
+
+	template: _.template('<div id="header"></div><div id="content"></div><div id="footer"></div>')
 
 });
 
-export {TodoView};
-
-
+export { TodoView };
 

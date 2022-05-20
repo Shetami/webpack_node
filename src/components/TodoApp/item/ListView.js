@@ -1,37 +1,51 @@
-import {View, CollectionView} from 'vendors'
+import { CollectionView } from 'vendors';
 import { ItemView } from './ItemView';
-import {_} from 'vendors';
-
-let ListView = CollectionView.extend({
-
-  tagName: 'ul',
-
-  initialize() {
-    let filter = this.getOption('PointModel');
-    this.listenTo(filter, 'change', () => {
-      this.filter();
-    })
-  },
-
-  childView: ItemView,
-  childViewOptions() {
-    return {
-      collection: this.collection
-    }
-  },
-
-  viewFilter(childView) {
-    let filter = this.getOption('PointModel');
-    let value = filter.get('completed');
-
-    if (value == null){
-      return true;
-    }
-
-    return childView.model.get('completed') === value;
-  }
-
-})
 
 
-export {ListView};
+const ListView = CollectionView.extend({
+
+	tagName: 'ul',
+
+	initialize () {
+
+		this.listenTo(this.model, 'change', () => {
+
+			this.filter();
+
+		});
+
+	},
+
+	childView: ItemView,
+	childViewOptions () {
+
+		return {
+			collection: this.collection
+		};
+
+	},
+
+	collectionEvents: {
+		'change:completed' () {
+
+			this.filter();
+
+		}
+	},
+	viewFilter (childView) {
+
+		const value = this.model.get('completed');
+
+		if (value == null) {
+
+			return true;
+
+		}
+		const result = childView.model.get('completed');
+		return result === value;
+
+	}
+});
+
+
+export { ListView };

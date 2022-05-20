@@ -1,1 +1,1 @@
-export {Collection, Model} from 'backbone'
+export { Collection, Model } from 'backbone';

@@ -1,1 +1,1 @@
-export {View, CollectionView} from 'backbone.marionette';
+export { View, CollectionView } from 'backbone.marionette';

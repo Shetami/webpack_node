@@ -1,10 +1,10 @@
-import {ItemModel} from './ItemModel'
-import {Collection} from 'vendors'
+import { ItemModel } from './ItemModel';
+import { Collection } from 'vendors';
 
-let Items = Collection.extend({
-    model: ItemModel,
+const Items = Collection.extend({
+	model: ItemModel
 
 
 });
-    
-export {Items};
+
+export { Items };
